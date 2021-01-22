@@ -12,7 +12,7 @@ import org.springframework.stereotype.Service;
 import org.zerock.club.entity.ClubMember;
 import org.zerock.club.entity.ClubMemberRole;
 import org.zerock.club.repository.ClubMemberRepository;
-import org.zerock.club.security.dto.ClubAuthMemeberDto;
+import org.zerock.club.security.dto.ClubAuthMemberDto;
 
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -51,7 +51,7 @@ public class ClubOAuth2UserDetailsService extends DefaultOAuth2UserService {
 
         ClubMember member = saveSocialMember(email);
 
-        ClubAuthMemeberDto clubAuthMember = new ClubAuthMemeberDto(
+        ClubAuthMemberDto clubAuthMember = new ClubAuthMemberDto(
                 member.getEmail(),
                 member.getPassword(),
                 true,

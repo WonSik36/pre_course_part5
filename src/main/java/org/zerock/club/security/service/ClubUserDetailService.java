@@ -9,7 +9,7 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 import org.zerock.club.entity.ClubMember;
 import org.zerock.club.repository.ClubMemberRepository;
-import org.zerock.club.security.dto.ClubAuthMemeberDto;
+import org.zerock.club.security.dto.ClubAuthMemberDto;
 
 import java.util.stream.Collectors;
 
@@ -27,7 +27,7 @@ public class ClubUserDetailService implements UserDetailsService {
         ClubMember clubMember = clubMemberRepository.findByEmail(username, false)
                 .orElseThrow(() -> new UsernameNotFoundException("Check Email or Social"));
 
-        ClubAuthMemeberDto clubAuthMember = new ClubAuthMemeberDto(
+        ClubAuthMemberDto clubAuthMember = new ClubAuthMemberDto(
                 clubMember.getEmail(),
                 clubMember.getPassword(),
                 clubMember.isFromSocial(),
