@@ -14,7 +14,7 @@ import java.util.Set;
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
-@ToString
+@ToString(exclude = "roleSet")
 public class ClubMember extends BaseEntity {
     @Id
     private String email;
